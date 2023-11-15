@@ -30,7 +30,7 @@ TmapDriveGuide _$TmapDriveGuideFromJson(Map<String, dynamic> json) =>
       secondSDIInfo: json['second_sdi_info'] == null
           ? null
           : TmapDriveGuideSDI.fromJson(
-          json['second_sdi_info'] as Map<String, dynamic>),
+              json['second_sdi_info'] as Map<String, dynamic>),
       hasTbtInfo: json['has_tbt_info'] as bool? ?? false,
       firstTBTInfo: json['first_tbt_info'] == null
           ? null
@@ -39,13 +39,12 @@ TmapDriveGuide _$TmapDriveGuideFromJson(Map<String, dynamic> json) =>
       secondTBTInfo: json['second_tbt_info'] == null
           ? null
           : TmapDriveGuideTBT.fromJson(
-          json['second_tbt_info'] as Map<String, dynamic>),
+              json['second_tbt_info'] as Map<String, dynamic>),
       remainDistanceToDestinationInMeter:
           json['remain_distance_to_destination_in_meter'] as int? ?? 0,
       remainTimeToDestinationInSec:
           json['remain_time_to_destination_in_sec'] as int? ?? 0,
-      remainViaPointSize:
-          json['remain_via_point_size'] as int? ?? 0,
+      remainViaPointSize: json['remain_via_point_size'] as int? ?? 0,
       remainDistanceToGoPositionInMeter:
           json['remain_distance_to_go_position_in_meter'] as int? ?? 0,
       remainTimeToGoPositionInSec:
@@ -54,8 +53,10 @@ TmapDriveGuide _$TmapDriveGuideFromJson(Map<String, dynamic> json) =>
           ?.map((e) =>
               TmapDriveGuideRemainViaPoint.fromJson(e as Map<String, dynamic>))
           .toList(),
-      matchedLatitude: json['matched_latitude'] as double? ?? 0,
-      matchedLongitude: json['matched_longitude'] as double? ?? 0,
+      matchedLatitude:
+          double.tryParse(json['matched_latitude'].toString()) ?? 0,
+      matchedLongitude:
+          double.tryParse(json['matched_longitude'].toString()) ?? 0,
     );
 
 Map<String, dynamic> _$TmapDriveGuideToJson(TmapDriveGuide instance) =>
@@ -80,8 +81,7 @@ Map<String, dynamic> _$TmapDriveGuideToJson(TmapDriveGuide instance) =>
           instance.remainDistanceToDestinationInMeter,
       'remain_time_to_destination_in_sec':
           instance.remainTimeToDestinationInSec,
-      'remain_via_point_size':
-          instance.remainViaPointSize,
+      'remain_via_point_size': instance.remainViaPointSize,
       'remain_distance_to_go_position_in_meter':
           instance.remainDistanceToGoPositionInMeter,
       'remain_time_to_go_position_in_sec': instance.remainTimeToGoPositionInSec,
