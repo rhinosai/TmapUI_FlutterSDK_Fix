@@ -72,7 +72,7 @@ class TmapViewWidget extends StatelessWidget {
   // const TmapViewWidget({
   //   Key? key, required this.data
   // }) : super(key: key);
-  TmapViewWidget({required this.data});
+  TmapViewWidget({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
