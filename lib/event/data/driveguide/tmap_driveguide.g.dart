@@ -96,7 +96,9 @@ Map<String, dynamic> _$TmapDriveGuideToJson(TmapDriveGuide instance) =>
       'matched_longitude': instance.matchedLongitude,
       'destination_latitude': instance.destinationLatitude,
       'destination_longitude': instance.destinationLongitude,
-      'drive_option': instance.planningOption
+      'drive_option': instance.planningOption != null
+          ? _$PlanningOptionEnumMap[instance.planningOption]
+          : null
     };
 
 const _$GpsStatusEnumMap = {
