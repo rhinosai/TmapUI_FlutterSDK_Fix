@@ -57,6 +57,12 @@ TmapDriveGuide _$TmapDriveGuideFromJson(Map<String, dynamic> json) =>
           double.tryParse(json['matched_latitude'].toString()) ?? 0,
       matchedLongitude:
           double.tryParse(json['matched_longitude'].toString()) ?? 0,
+      destinationLatitude:
+          double.tryParse(json['destination_latitude'].toString()) ?? 0,
+      destinationLongitude:
+          double.tryParse(json['destination_longitude'].toString()) ?? 0,
+      planningOption:
+          $enumDecodeNullable(_$PlanningOptionEnumMap, json['drive_option']),
     );
 
 Map<String, dynamic> _$TmapDriveGuideToJson(TmapDriveGuide instance) =>
@@ -88,6 +94,9 @@ Map<String, dynamic> _$TmapDriveGuideToJson(TmapDriveGuide instance) =>
       'remain_via_point': instance.remainViaPoint,
       'matched_latitude': instance.matchedLatitude,
       'matched_longitude': instance.matchedLongitude,
+      'destination_latitude': instance.destinationLatitude,
+      'destination_longitude': instance.destinationLongitude,
+      'drive_option': instance.planningOption
     };
 
 const _$GpsStatusEnumMap = {
@@ -96,4 +105,16 @@ const _$GpsStatusEnumMap = {
   GpsStatus.good: 'good',
   GpsStatus.tunnel: 'tunnel',
   GpsStatus.underpass: 'underpass',
+};
+
+const _$PlanningOptionEnumMap = {
+  PlanningOption.recommend: 'Traffic_Recommend',
+  PlanningOption.minTime: 'Traffic_MinTime',
+  PlanningOption.free: 'Traffic_Free',
+  PlanningOption.shortest: 'Shortest_ChargedAndFree',
+  PlanningOption.highway: 'Traffic_Highway',
+  PlanningOption.firstTime: 'Traffic_FirstTime',
+  PlanningOption.generalRoad: 'Traffic_GeneralRoad',
+  PlanningOption.truck: 'Traffic_Truck',
+  PlanningOption.avoidSchoolZone: 'Traffic_AvoidSchoolZone',
 };
