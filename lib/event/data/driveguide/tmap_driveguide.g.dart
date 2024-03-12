@@ -57,6 +57,7 @@ TmapDriveGuide _$TmapDriveGuideFromJson(Map<String, dynamic> json) =>
           double.tryParse(json['matched_latitude'].toString()) ?? 0,
       matchedLongitude:
           double.tryParse(json['matched_longitude'].toString()) ?? 0,
+      destinationName: json['destination_name'] as String? ?? "",          
       destinationLatitude:
           double.tryParse(json['destination_latitude'].toString()) ?? 0,
       destinationLongitude:
@@ -94,6 +95,7 @@ Map<String, dynamic> _$TmapDriveGuideToJson(TmapDriveGuide instance) =>
       'remain_via_point': instance.remainViaPoint,
       'matched_latitude': instance.matchedLatitude,
       'matched_longitude': instance.matchedLongitude,
+      'destination_name' : instance.destinationName,
       'destination_latitude': instance.destinationLatitude,
       'destination_longitude': instance.destinationLongitude,
       'drive_option': instance.planningOption != null
