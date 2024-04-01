@@ -53,15 +53,13 @@ TmapDriveGuide _$TmapDriveGuideFromJson(Map<String, dynamic> json) =>
           ?.map((e) =>
               TmapDriveGuideRemainViaPoint.fromJson(e as Map<String, dynamic>))
           .toList(),
-      matchedLatitude:
-          double.tryParse(json['matched_latitude'].toString()) ?? 0,
-      matchedLongitude:
-          double.tryParse(json['matched_longitude'].toString()) ?? 0,
-      destinationName: json['destination_name'] as String? ?? "",          
+      matchedLatitude: (json['matched_latitude'] as num?)?.toDouble() ?? 0,
+      matchedLongitude: (json['matched_longitude'] as num?)?.toDouble() ?? 0,
+      destinationName: json['destination_name'] as String? ?? "",
       destinationLatitude:
-          double.tryParse(json['destination_latitude'].toString()) ?? 0,
+          (json['destination_latitude'] as num?)?.toDouble() ?? 0,
       destinationLongitude:
-          double.tryParse(json['destination_longitude'].toString()) ?? 0,
+          (json['destination_longitude'] as num?)?.toDouble() ?? 0,
       planningOption:
           $enumDecodeNullable(_$PlanningOptionEnumMap, json['drive_option']),
     );
