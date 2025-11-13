@@ -1,3 +1,13 @@
+## 1.0.53
+* Background 동작 지원(iOS Xcode 프로젝트 설정 Background Mode 옵션 필수)
+* Swift 5.9 지원
+* Alamofire 버전 제약 제거
+
+## 1.0.44
+* iOS 동작을 위한 alamofire 버전 명시
+* 경로안내 종료 후 출력되는 map 회전문제 수정 (AOS)
+* 침수위험구간 안내 기능 추가 (AOS,IOS)
+
 ## 1.0.43
 * 홍수주의 구간 안내 기능 추가 (AOS,IOS)
 * 경로요약화면 UI버그 개선, 자동안내 관련 버그 개선(AOS)
