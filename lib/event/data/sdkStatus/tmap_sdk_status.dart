@@ -50,7 +50,7 @@ enum TmapSDKStatus {
 @JsonSerializable()
 class TmapSDKStatusMsg {
   /// SDK의 상태를 나타냅니다.
-  @JsonKey(name: 'sdk_status')
+  @JsonKey(name: 'sdk_status', unknownEnumValue: TmapSDKStatus.none)
   TmapSDKStatus? sdkStatus;
   /// 상태별 부가 정보를 나타냅니다.
   @JsonKey(name: 'status_extra_data')

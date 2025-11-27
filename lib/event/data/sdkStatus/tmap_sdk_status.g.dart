@@ -11,6 +11,7 @@ TmapSDKStatusMsg _$TmapSDKStatusMsgFromJson(Map<String, dynamic> json) =>
       sdkStatus: $enumDecodeNullable(
         _$TmapSDKStatusEnumMap,
         json['sdk_status'],
+        unknownValue: TmapSDKStatus.none,
       ),
       extraData: json['status_extra_data'] as String? ?? "",
     );
