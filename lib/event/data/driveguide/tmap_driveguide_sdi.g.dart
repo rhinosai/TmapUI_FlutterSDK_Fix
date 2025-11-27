@@ -123,5 +123,6 @@ const _$SDITypeEnumMap = {
   SDIType.rearSpeed: 'rearSpeed',
   SDIType.rearSignal: 'rearSignal',
   SDIType.floodCaution: 'floodCaution',
+  SDIType.pedestrianPriorityRoad: 'pedestrianPriorityRoad',
   SDIType.unknown: 'unknown',
 };
