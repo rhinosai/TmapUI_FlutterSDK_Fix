@@ -7,15 +7,15 @@ part of 'uisdk_marker.dart';
 // **************************************************************************
 
 UISDKMarker _$UISDKMarkerFromJson(Map<String, dynamic> json) => UISDKMarker(
-      markerPoint: (json['marker_point'] as List<dynamic>?)
-          ?.map((e) => UISDKMarkerPoint.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      markerId: json['marker_id'] as String? ?? "",
-      imageName: json['image_name'] as String? ?? "",
-      markerType:
-          $enumDecodeNullable(_$MarkerTypeEnumMap, json['marker_type']) ??
-              MarkerType.point,
-    );
+  markerPoint: (json['marker_point'] as List<dynamic>?)
+      ?.map((e) => UISDKMarkerPoint.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  markerId: json['marker_id'] as String? ?? "",
+  imageName: json['image_name'] as String? ?? "",
+  markerType:
+      $enumDecodeNullable(_$MarkerTypeEnumMap, json['marker_type']) ??
+      MarkerType.point,
+);
 
 Map<String, dynamic> _$UISDKMarkerToJson(UISDKMarker instance) =>
     <String, dynamic>{

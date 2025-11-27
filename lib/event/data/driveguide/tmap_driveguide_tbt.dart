@@ -223,7 +223,7 @@ class TmapDriveGuideTBT {
   @JsonKey(name: 'tbt_time')
   int tbtTime = -1;
   /// TBT의 종류를 나타냅니다.
-  @JsonKey(name: 'tbt_turn_type')
+  @JsonKey(name: 'tbt_turn_type', unknownEnumValue: TBTTurnType.na)
   TBTTurnType tbtTurnType = TBTTurnType.na;
   /// tollgate의 요금을 나타냅니다. (단위 : 원)
   @JsonKey(name: 'tollfee')

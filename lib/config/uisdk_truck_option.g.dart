@@ -8,12 +8,13 @@ part of 'uisdk_truck_option.dart';
 
 UISDKTruckOption _$UISDKTruckOptionFromJson(Map<String, dynamic> json) =>
     UISDKTruckOption(
-      truckHeight: json['truck_height'] as int? ?? 0,
-      truckLoadingWeight: json['truck_load_weight'] as int? ?? 0,
-      truckType: $enumDecodeNullable(_$TruckTypeEnumMap, json['truck_type']) ??
+      truckHeight: (json['truck_height'] as num?)?.toInt() ?? 0,
+      truckLoadingWeight: (json['truck_load_weight'] as num?)?.toInt() ?? 0,
+      truckType:
+          $enumDecodeNullable(_$TruckTypeEnumMap, json['truck_type']) ??
           TruckType.none,
-      truckWidth: json['truck_width'] as int? ?? 0,
-      truckLength: json['truck_length'] as int? ?? 0,
+      truckWidth: (json['truck_width'] as num?)?.toInt() ?? 0,
+      truckLength: (json['truck_length'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$UISDKTruckOptionToJson(UISDKTruckOption instance) =>

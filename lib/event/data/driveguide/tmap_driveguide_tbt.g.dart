@@ -8,21 +8,27 @@ part of 'tmap_driveguide_tbt.dart';
 
 TmapDriveGuideTBT _$TmapDriveGuideTBTFromJson(Map<String, dynamic> json) =>
     TmapDriveGuideTBT(
-      tbtDistance: json['tbt_distance'] as int? ?? -1,
-      tbtTime: json['tbt_time'] as int? ?? -1,
+      tbtDistance: (json['tbt_distance'] as num?)?.toInt() ?? -1,
+      tbtTime: (json['tbt_time'] as num?)?.toInt() ?? -1,
       tbtTurnType:
-          $enumDecodeNullable(_$TBTTurnTypeEnumMap, json['tbt_turn_type']) ??
-              TBTTurnType.na,
-      tollfee: json['tollfee'] as int? ?? -1,
+          $enumDecodeNullable(
+            _$TBTTurnTypeEnumMap,
+            json['tbt_turn_type'],
+            unknownValue: TBTTurnType.na,
+          ) ??
+          TBTTurnType.na,
+      tollfee: (json['tollfee'] as num?)?.toInt() ?? -1,
       roadName: json['road_name'] as String? ?? "",
       crossName: json['cross_name'] as String? ?? "",
       nearDirectionName: json['near_direction_name'] as String? ?? "",
       midDirectionName: json['mid_direction_name'] as String? ?? "",
       farDirectionName: json['far_direction_name'] as String? ?? "",
       mainText: json['main_text'] as String? ?? "",
-      complexIntersectionVoiceType: $enumDecodeNullable(
-              _$ComplexIntersectionVoiceTypeEnumMap,
-              json['complex_intersection_voice_type']) ??
+      complexIntersectionVoiceType:
+          $enumDecodeNullable(
+            _$ComplexIntersectionVoiceTypeEnumMap,
+            json['complex_intersection_voice_type'],
+          ) ??
           ComplexIntersectionVoiceType.strait,
     );
 
@@ -38,8 +44,9 @@ Map<String, dynamic> _$TmapDriveGuideTBTToJson(TmapDriveGuideTBT instance) =>
       'mid_direction_name': instance.midDirectionName,
       'far_direction_name': instance.farDirectionName,
       'main_text': instance.mainText,
-      'complex_intersection_voice_type': _$ComplexIntersectionVoiceTypeEnumMap[
-          instance.complexIntersectionVoiceType]!,
+      'complex_intersection_voice_type':
+          _$ComplexIntersectionVoiceTypeEnumMap[instance
+              .complexIntersectionVoiceType]!,
     };
 
 const _$TBTTurnTypeEnumMap = {

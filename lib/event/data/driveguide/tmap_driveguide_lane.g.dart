@@ -9,23 +9,27 @@ part of 'tmap_driveguide_lane.dart';
 TmapDriveGuideLane _$TmapDriveGuideLaneFromJson(Map<String, dynamic> json) =>
     TmapDriveGuideLane(
       showLane: json['show_lane'] as bool? ?? false,
-      laneCount: json['lane_count'] as int? ?? 0,
-      laneDistance: json['lane_distance'] as int? ?? 0,
+      laneCount: (json['lane_count'] as num?)?.toInt() ?? 0,
+      laneDistance: (json['lane_distance'] as num?)?.toInt() ?? 0,
       nLaneTurnInfo: (json['lane_turn_info'] as List<dynamic>?)
-          ?.map((e) => (e as List<dynamic>)
-              .map((e) => $enumDecode(_$LaneTurnTypeEnumMap, e))
-              .toList())
+          ?.map(
+            (e) => (e as List<dynamic>)
+                .map((e) => $enumDecode(_$LaneTurnTypeEnumMap, e))
+                .toList(),
+          )
           .toList(),
       nLaneEtcInfo: (json['lane_etc_info'] as List<dynamic>?)
-          ?.map((e) => (e as List<dynamic>)
-              .map((e) => $enumDecode(_$LaneEtcTypeEnumMap, e))
-              .toList())
+          ?.map(
+            (e) => (e as List<dynamic>)
+                .map((e) => $enumDecode(_$LaneEtcTypeEnumMap, e))
+                .toList(),
+          )
           .toList(),
       availableTurn:
           $enumDecodeNullable(_$LaneTurnTypeEnumMap, json['available_turn']) ??
-              LaneTurnType.strait,
+          LaneTurnType.strait,
       hipassLaneInfo: (json['hipass_lane_info'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList(),
     );
 

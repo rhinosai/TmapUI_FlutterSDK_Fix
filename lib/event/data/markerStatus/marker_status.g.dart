@@ -7,11 +7,14 @@ part of 'marker_status.dart';
 // **************************************************************************
 
 MarkerStatus _$MarkerStatusFromJson(Map<String, dynamic> json) => MarkerStatus(
-      markerId: json['selected_marker_id'] as String? ?? "",
-      markerType: $enumDecodeNullable(
-              _$SelectedMarkerTypeEnumMap, json['selected_marker_type']) ??
-          SelectedMarkerType.point,
-    );
+  markerId: json['selected_marker_id'] as String? ?? "",
+  markerType:
+      $enumDecodeNullable(
+        _$SelectedMarkerTypeEnumMap,
+        json['selected_marker_type'],
+      ) ??
+      SelectedMarkerType.point,
+);
 
 Map<String, dynamic> _$MarkerStatusToJson(MarkerStatus instance) =>
     <String, dynamic>{

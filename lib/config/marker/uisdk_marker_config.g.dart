@@ -14,6 +14,4 @@ UISDKMarkerConfig _$UISDKMarkerConfigFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$UISDKMarkerConfigToJson(UISDKMarkerConfig instance) =>
-    <String, dynamic>{
-      'marker_info': instance.markers,
-    };
+    <String, dynamic>{'marker_info': instance.markers};

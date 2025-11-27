@@ -8,15 +8,16 @@ part of 'tmap_sdk_status.dart';
 
 TmapSDKStatusMsg _$TmapSDKStatusMsgFromJson(Map<String, dynamic> json) =>
     TmapSDKStatusMsg(
-      sdkStatus:
-      $enumDecodeNullable(_$TmapSDKStatusEnumMap, json['sdk_status']) ??
-          TmapSDKStatus.none,
+      sdkStatus: $enumDecodeNullable(
+        _$TmapSDKStatusEnumMap,
+        json['sdk_status'],
+      ),
       extraData: json['status_extra_data'] as String? ?? "",
     );
 
 Map<String, dynamic> _$TmapSDKStatusMsgToJson(TmapSDKStatusMsg instance) =>
     <String, dynamic>{
-      'sdk_status': instance.sdkStatus,
+      'sdk_status': _$TmapSDKStatusEnumMap[instance.sdkStatus],
       'status_extra_data': instance.extraData,
     };
 
@@ -33,5 +34,6 @@ const _$TmapSDKStatusEnumMap = {
   TmapSDKStatus.requestPermission: 'requestPermission',
   TmapSDKStatus.finished: 'finished',
   TmapSDKStatus.savedDriveInfo: 'savedDriveInfo',
-  TmapSDKStatus.continueDriveRequestedButNoSavedDriveInfo: 'continueDriveRequestedButNoSavedDriveInfo',
+  TmapSDKStatus.continueDriveRequestedButNoSavedDriveInfo:
+      'continueDriveRequestedButNoSavedDriveInfo',
 };

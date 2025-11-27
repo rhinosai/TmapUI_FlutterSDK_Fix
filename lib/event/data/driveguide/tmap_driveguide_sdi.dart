@@ -100,7 +100,7 @@ enum SDIType {
 @JsonSerializable()
 class TmapDriveGuideSDI {
   /// Sdi의 종류를 나타냅니다.
-  @JsonKey(name: 'sdi_type')
+  @JsonKey(name: 'sdi_type', unknownEnumValue: SDIType.unknown)
   SDIType sdiType = SDIType.unknown;
   /// 현 위치에서 SDI까지의 거리를 나타냅니다.
   @JsonKey(name: 'sdi_distance')

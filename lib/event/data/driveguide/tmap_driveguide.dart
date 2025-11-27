@@ -40,7 +40,7 @@ class TmapDriveGuide {
   @JsonKey(name: 'no_location_signal')
   bool noLocationSignal = false;
   /// gps상태를 나타냅니다.
-  @JsonKey(name: 'gps_state')
+  @JsonKey(name: 'gps_state', unknownEnumValue: GpsStatus.noSignal)
   GpsStatus gpsState = GpsStatus.noSignal;
   /// dark mode의 여부를 나타냅니다.
   @JsonKey(name: 'is_night_mode')
@@ -119,8 +119,8 @@ class TmapDriveGuide {
   @JsonKey(name: 'destination_longitude')
   double destinationLongitude;
   /// 주행option
-  @JsonKey(name: 'drive_option')
-  PlanningOption? planningOption;
+  @JsonKey(name: 'drive_option', unknownEnumValue: PlanningOption.recommend)
+  PlanningOption planningOption = PlanningOption.recommend;
 
   //TODO. 복잡교차로 이미지 전달 추가해야 함.
 
@@ -152,7 +152,7 @@ class TmapDriveGuide {
     this.destinationName = "",
     this.destinationLatitude = 0,
     this.destinationLongitude = 0,
-    this.planningOption
+    this.planningOption = PlanningOption.recommend
   });
 
   // ref : https://flutter-ko.dev/docs/development/data-and-backend/json

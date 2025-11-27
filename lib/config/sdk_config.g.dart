@@ -7,44 +7,48 @@ part of 'sdk_config.dart';
 // **************************************************************************
 
 SDKConfig _$SDKConfigFromJson(Map<String, dynamic> json) => SDKConfig(
-      carType: $enumDecodeNullable(_$UISDKCarModelEnumMap, json['car_type']) ??
-          UISDKCarModel.normal,
-      truckOption: json['truck_option'] == null
-          ? null
-          : UISDKTruckOption.fromJson(
-              json['truck_option'] as Map<String, dynamic>),
-      fuelType: $enumDecodeNullable(_$UISDKFuelEnumMap, json['fuel_type']) ??
-          UISDKFuel.gas,
-      showTrafficAccident: json['show_traffic_accident'] as bool? ?? true,
-      mapTextSize: $enumDecodeNullable(
-              _$UISDKMapFontSizeEnumMap, json['map_text_size']) ??
-          UISDKMapFontSize.medium,
-      nightMode: $enumDecodeNullable(
-              _$UISDKAutoNightModeTypeEnumMap, json['night_mode']) ??
-          UISDKAutoNightModeType.auto,
-      isUseSpeedReactMapScale:
-          json['is_use_speed_react_map_scale'] as bool? ?? true,
-      isShowTrafficInRoute: json['is_show_traffic_in_route'] as bool? ?? true,
-      isShowExitPopupWhenStopDriving:
-          json['is_show_exit_popup_in_stop_driving'] as bool? ?? true,
-      useRealTimeAutoReroute:
-          json['use_realtime_auto_reroute'] as bool? ?? true,
-      suspendInBackground: json['suspend_in_background'] as bool? ?? true,
-    );
+  carType:
+      $enumDecodeNullable(_$UISDKCarModelEnumMap, json['car_type']) ??
+      UISDKCarModel.normal,
+  truckOption: json['truck_option'] == null
+      ? null
+      : UISDKTruckOption.fromJson(json['truck_option'] as Map<String, dynamic>),
+  fuelType:
+      $enumDecodeNullable(_$UISDKFuelEnumMap, json['fuel_type']) ??
+      UISDKFuel.gas,
+  showTrafficAccident: json['show_traffic_accident'] as bool? ?? true,
+  mapTextSize:
+      $enumDecodeNullable(_$UISDKMapFontSizeEnumMap, json['map_text_size']) ??
+      UISDKMapFontSize.medium,
+  nightMode:
+      $enumDecodeNullable(
+        _$UISDKAutoNightModeTypeEnumMap,
+        json['night_mode'],
+      ) ??
+      UISDKAutoNightModeType.auto,
+  isUseSpeedReactMapScale:
+      json['is_use_speed_react_map_scale'] as bool? ?? true,
+  isShowTrafficInRoute: json['is_show_traffic_in_route'] as bool? ?? true,
+  isShowExitPopupWhenStopDriving:
+      json['is_show_exit_popup_when_stop_driving'] as bool? ?? true,
+  useRealTimeAutoReroute: json['use_realtime_auto_reroute'] as bool? ?? true,
+  suspendInBackground: json['suspend_in_background'] as bool? ?? true,
+);
 
 Map<String, dynamic> _$SDKConfigToJson(SDKConfig instance) => <String, dynamic>{
-      'car_type': _$UISDKCarModelEnumMap[instance.carType]!,
-      'truck_option': instance.truckOption,
-      'fuel_type': _$UISDKFuelEnumMap[instance.fuelType]!,
-      'show_traffic_accident': instance.showTrafficAccident,
-      'map_text_size': _$UISDKMapFontSizeEnumMap[instance.mapTextSize]!,
-      'night_mode': _$UISDKAutoNightModeTypeEnumMap[instance.nightMode]!,
-      'is_use_speed_react_map_scale': instance.isUseSpeedReactMapScale,
-      'is_show_traffic_in_route': instance.isShowTrafficInRoute,
-      'is_show_exit_popup_when_stop_driving': instance.isShowExitPopupWhenStopDriving,
-      'use_realtime_auto_reroute': instance.useRealTimeAutoReroute,
-      'suspend_in_background': instance.suspendInBackground
-    };
+  'car_type': _$UISDKCarModelEnumMap[instance.carType]!,
+  'truck_option': instance.truckOption,
+  'fuel_type': _$UISDKFuelEnumMap[instance.fuelType]!,
+  'show_traffic_accident': instance.showTrafficAccident,
+  'map_text_size': _$UISDKMapFontSizeEnumMap[instance.mapTextSize]!,
+  'night_mode': _$UISDKAutoNightModeTypeEnumMap[instance.nightMode]!,
+  'is_use_speed_react_map_scale': instance.isUseSpeedReactMapScale,
+  'is_show_traffic_in_route': instance.isShowTrafficInRoute,
+  'is_show_exit_popup_when_stop_driving':
+      instance.isShowExitPopupWhenStopDriving,
+  'use_realtime_auto_reroute': instance.useRealTimeAutoReroute,
+  'suspend_in_background': instance.suspendInBackground,
+};
 
 const _$UISDKCarModelEnumMap = {
   UISDKCarModel.compact: 'CT_COMPACT',

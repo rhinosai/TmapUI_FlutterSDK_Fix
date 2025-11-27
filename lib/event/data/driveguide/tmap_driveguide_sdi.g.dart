@@ -8,19 +8,25 @@ part of 'tmap_driveguide_sdi.dart';
 
 TmapDriveGuideSDI _$TmapDriveGuideSDIFromJson(Map<String, dynamic> json) =>
     TmapDriveGuideSDI(
-      sdiType: $enumDecodeNullable(_$SDITypeEnumMap, json['sdi_type']) ??
+      sdiType:
+          $enumDecodeNullable(
+            _$SDITypeEnumMap,
+            json['sdi_type'],
+            unknownValue: SDIType.unknown,
+          ) ??
           SDIType.unknown,
-      sdiDistance: json['sdi_distance'] as int? ?? -1,
-      sdiSpeedLimit: json['sdi_speedlimit'] as int? ?? -1,
+      sdiDistance: (json['sdi_distance'] as num?)?.toInt() ?? -1,
+      sdiSpeedLimit: (json['sdi_speedlimit'] as num?)?.toInt() ?? -1,
       sdiIsBlockSection: json['sdi_is_block_section'] as bool? ?? false,
-      sdiBlockDistance: json['sdi_block_distance'] as int? ?? -1,
-      sdiBlockSpeed: json['sdi_block_speed'] as int? ?? -1,
-      sdiBlockAverageSpeed: json['sdi_block_average_speed'] as int? ?? -1,
-      sdiBlockTime: json['sdi_block_time'] as int? ?? -1,
+      sdiBlockDistance: (json['sdi_block_distance'] as num?)?.toInt() ?? -1,
+      sdiBlockSpeed: (json['sdi_block_speed'] as num?)?.toInt() ?? -1,
+      sdiBlockAverageSpeed:
+          (json['sdi_block_average_speed'] as num?)?.toInt() ?? -1,
+      sdiBlockTime: (json['sdi_block_time'] as num?)?.toInt() ?? -1,
       isChangableSpeedType: json['is_changable_speed_type'] as bool? ?? false,
       isLimitSpeedSignChanged:
           json['is_limit_speed_sign_changed'] as bool? ?? false,
-      truckLimit: json['truck_limit'] as String? ?? "",
+      truckLimit: json['truck_limit'] as String? ?? null,
     );
 
 Map<String, dynamic> _$TmapDriveGuideSDIToJson(TmapDriveGuideSDI instance) =>
