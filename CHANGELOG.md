@@ -1,3 +1,6 @@
+## 1.0.59
+* Bugfix(Android crash)
+
 ## 1.0.58
 * Navi 볼륨 조절 기능 적용
 

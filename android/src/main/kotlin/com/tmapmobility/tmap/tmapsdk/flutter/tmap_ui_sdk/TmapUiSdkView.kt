@@ -315,7 +315,8 @@ class TmapUiSdkView(
       if ((isFragmentHasView && !isFlutterDisplaying && isNotMyParentFromFlutter) ||
           callFromInitializePlatformViewIfNeeded || // 타이밍에 따라 view가 생성되기 전 문제의 코드가 호출되면서 parent를 검사할 때가 있다.
           possibleExceptionOccurMethodCall) { // exception을 발생시키는 call은 두번째 이다.
-        (fragmentContainer.parent as ViewGroup).removeView(fragmentContainer as ViewGroup)
+        // parent가 null인 경우 NPE 방지를 위해 safe cast 사용
+        (fragmentContainer.parent as? ViewGroup)?.removeView(fragmentContainer)
         parentRemoved = true
       }
       Log.d(TAG,"getViewCalledCount:$getViewCalledCount callFromInitializePlatformViewIfNeeded:$callFromInitializePlatformViewIfNeeded isFragmentHasView:$isFragmentHasView isFlutterDisplaying:$isFlutterDisplaying isNotMyParentFromFlutter:$isNotMyParentFromFlutter parentRemoved:$parentRemoved myParentView:$myParentView")
